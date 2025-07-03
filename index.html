@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJS RP: Geliştirilmiş Versiyon</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #2a2a2a;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .container:hover {
+            transform: scale(1.01);
+            box-shadow: 0 0 25px rgba(255, 77, 77, 0.6);
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff4d4d;
+            text-align: center;
+            border-bottom: 2px solid #ff4d4d;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            animation: flicker-glow 5s infinite linear;
+        }
+        h2 {
+            font-size: 2em;
+            color: #ff8080;
+            margin-top: 30px;
+            border-left: 4px solid #ff8080;
+            padding-left: 10px;
+        }
+        h3 {
+            font-size: 1.5em;
+            color: #ff9999;
+            margin-top: 25px;
+        }
+        p, li {
+            margin: 10px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #333;
+            padding: 15px;
+            margin: 8px 0;
+            border-left: 4px solid #ff4d4d;
+            border-radius: 5px;
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        li:hover {
+            border-color: #ff6666;
+            transform: scale(1.02) translateX(5px);
+            box-shadow: 0 0 10px #ff6666;
+            background-color: #3a3a3a;
+        }
+        strong {
+            color: #ff6666;
+        }
+        em {
+            color: #ff9999;
+        }
+        blockquote {
+            border-left: 4px solid #ff4d4d;
+            padding-left: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #cccccc;
+            background-color: rgba(0,0,0,0.1);
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        blockquote:hover {
+            border-color: #ff9999;
+        }
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        .section:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+            box-shadow: 0 0 15px rgba(255, 77, 77, 0.3);
+        }
+        
+        /* BAŞLIK İÇİN YENİ ANİMASYON (FLICKER) */
+        @keyframes flicker-glow {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                color: #ff4d4d;
+                text-shadow:
+                    0 0 4px rgba(255, 77, 77, 0.8),
+                    0 0 10px rgba(255, 77, 77, 0.8),
+                    0 0 18px rgba(255, 77, 77, 0.8),
+                    0 0 38px rgba(255, 44, 44, 0.8),
+                    0 0 70px rgba(255, 44, 44, 0.8);
+            }
+            20%, 24%, 55% {
+                color: #5e2a2a; /* Soluk renk */
+                text-shadow: none;
+            }
+        }
+
+        @keyframes tremble-subtle {
+            0% { transform: translate(-1px, 0); }
+            50% { transform: translate(1px, 0); }
+            100% { transform: translate(-1px, 0); }
+        }
+
+        @keyframes tremble-intense {
+            0% { transform: translate(-2px, 2px) skewX(-3deg); }
+            25% { transform: translate(3px, -1px) skewX(0deg); }
+            50% { transform: translate(-3px, 3px) skewX(3deg); }
+            75% { transform: translate(2px, -2px) skewX(0deg); }
+            100% { transform: translate(-1px, 1px) skewX(-3deg); }
+        }
+
+        .glitch, .glitch-red-black {
+            position: relative;
+            display: inline-block;
+        }
+        .glitch > span, .glitch-red-black > span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .glitch { color: #e0e0e0; }
+        .glitch:hover { color: #000; }
+        .glitch > span {
+            color: #000;
+            opacity: 0.4;
+        }
+        .glitch:hover > span {
+            color: #e0e0e0;
+            opacity: 0.6;
+        }
+
+        .glitch-red-black { color: #ff4d4d; }
+        .glitch-red-black:hover { text-shadow: 0 0 10px #ff4d4d, 0 0 20px #000; }
+        .glitch-red-black > span { opacity: 0.5; }
+        .glitch-red-black > span:nth-child(even) { color: #000; }
+        .glitch-red-black > span:nth-child(odd) { color: #ff6666; }
+        
+        .glitch > span:nth-child(n+6),
+        .glitch-red-black > span:nth-child(n+6) {
+            display: none;
+        }
+        .glitch > span:nth-child(-n+5),
+        .glitch-red-black > span:nth-child(-n+5) {
+            animation: tremble-subtle 0.4s infinite linear alternate;
+        }
+
+        .glitch:hover > span,
+        .glitch-red-black:hover > span {
+            display: block;
+            animation: tremble-intense 0.1s infinite;
+        }
+
+        .neon {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .neon-blue { color: #00b7eb; }
+        .neon-blue:hover { text-shadow: 0 0 10px #00b7eb, 0 0 20px #00b7eb; }
+        .neon-gradient {
+            background: linear-gradient(45deg, #00b7eb, #ff4d4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .neon-gradient:hover { text-shadow: 0 0 10px #00b7eb, 0 0 20px #ff4d4d; }
+        .neon-red { color: #ff4d4d; }
+        .neon-red:hover { text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d; }
+
+        @media (max-width: 600px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.2em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌑 JJS RP (Geliştirilmiş Versiyon)</h1>
+
+        <div class="section">
+            <h2>Karakterler</h2>
+            <ul>
+                <li>
+                    <strong><span class="neon neon-blue" data-text="Mia (Sude)">Mia (Sude)</span></strong><br>
+                    <strong>Kişilik:</strong> Arkadaş canlısı, yardımsever, cesur.<br>
+                    <strong>Lanet Enerjisi:</strong> Orta.<br>
+                    <strong>Özellikler:</strong> Grup içinde en sosyal olan kişi, çatışmaları yatıştırma rolünde. Savaşmaktansa çözüm bulmaya çalışır. Grup düştüğünde onları motive eden kişi.
+                </li>
+                <li>
+                    <strong><span class="neon neon-red" data-text="Profesör Elias Skinner (Kerem)">Profesör Elias Skinner (Kerem)</span></strong><br>
+                    <strong>Kişilik:</strong> Dâhi, stratejist, ultra güçlü. Evrenin sırlarını çözmüş, eskiden özel kuvvetlerde görev yapmış biri.<br>
+                    <strong>Lanet Enerjisi:</strong> Ultra Mega Süper Yüksek.<br>
+                    <strong>Özellikler:</strong> Black Flash ustası. Bilgisini öğrencilerine aktarmayı görev edinmiş. Sessizliği sezgileriyle bozar.
+                </li>
+                <li>
+                    <strong><span class="neon neon-gradient" data-text="Karlin (Sudenaz)">Karlin (Sudenaz)</span></strong><br>
+                    <strong>Kişilik:</strong> Dürüst, hayvansever, sessiz ama duygusal. İçinde büyük bir güç saklı.<br>
+                    <strong>Lanet Enerjisi:</strong> Orta.<br>
+                    <strong>Özellikler:</strong> Sessizliğiyle mistik bir hava katar. Bazen bir somon gibi davranmasıyla grupta eğlenceli anlar yaratır.
+                </li>
+                <li>
+                    <strong><span class="glitch" data-text="Eren (Yeni isim: Veyron)">Eren (Yeni isim: Veyron)</span></strong><br>
+                    <strong>Kişilik:</strong> Karanlığa düşmüş bir anti-kahraman. Kişilik bozukluğu olan, içe dönük ve aşırı güçlü. Güç için her şeyi yapar.<br>
+                    <strong>Lanet Enerjisi:</strong> Fazla Çok Yüksek.<br>
+                    <strong>Özellikler:</strong> Garou havasında bir karakter. Dramın, kaosun ve çatışmanın başrolü. İçindeki <em>"iyilik"</em> artık sadece küllerden ibaret.
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🎭 Hikaye</h2>
+
+            <div class="section">
+                <h3>🩸 1. GÜN — “Düşüşün Başlangıcı”</h3>
+                <p><strong>Veyron</strong> sabah okulun kapısından içeri girdiğinde gözleri artık canlı bakmaz olmuştu. <span class="neon neon-red" data-text="Skinner">Skinner</span> hoca onunla tekrar konuşmaya çalışsa da <strong>Veyron</strong>’un aklı orada değildi. Gözleri her köşeye takılıyor, herkesi düşman gibi görüyordu. <span class="neon neon-blue" data-text="Mia">Mia</span> ona yaklaşmak istedi ama <strong>Veyron</strong> uzaklaştı. <span class="neon neon-blue" data-text="Mia">Mia</span>, “Ne oluyor sana?” diye sorduğunda tek cevap geldi:</p>
+                <blockquote><em>Siz benim ne yaşadığımı bilmiyorsunuz.</em></blockquote>
+                <p>O gece <strong>Veyron</strong> odasında yalnız kaldı. İçindeki karanlık artık bir düşünce değil, bir varlığa dönüşmüştü. Yumruğunu duvara öyle bir vurdu ki tüm oda sarsıldı. Kan akarken uyuyakaldı.</p>
+            </div>
+
+            <div class="section">
+                <h3>⚠️ 2. GÜN — “Sisler İçinde Bir Tehdit”</h3>
+                <p><strong>Veyron</strong> okula gitmedi. Planını son aşamaya getirmişti. Bu sırada <span class="neon neon-red" data-text="Skinner">Skinner</span> hoca, <span class="neon neon-blue" data-text="Mia">Mia</span> ve <span class="neon neon-gradient" data-text="Karlin">Karlin</span>’e “Black Flash” öğretiyordu.</p>
+                <blockquote>🌀 <strong>Skinner için anlatım önerisi (Skinner konuşması):</strong><br>
+                <em>"Black Flash, kalbinizin attığı son anda yapılan bir saldırıdır. Bir ölüm vuruşu değil, zamana karşı bir isyan. Odaklan. Hisset. Sonra bırak kendini."</em></blockquote>
+                <p><span class="neon neon-blue" data-text="Mia">Mia</span> bir türlü dengesini bulamaz. <span class="neon neon-gradient" data-text="Karlin">Karlin</span> ise enerjiyi çağırsa da ateşleyemez.</p>
+                <p>Ders sonunda herkes evlerine dağılırken, <strong>Veyron</strong> karanlık planını tamamlamıştır. Düşüncelerinde sadece tek bir cümle vardır:</p>
+                <blockquote><em>"Kurtaramadığınız karanlıkla sizi boğacağım."</em></blockquote>
+            </div>
+
+            <div class="section">
+                <h3>🌫 3. GÜN — “Sis Çökünce”</h3>
+                <p>Ders işlenirken <span class="glitch-red-black" data-text="Skinner">Skinner</span> kısa bir süre dışarı çıkar. O an sınıfa yoğun bir sis çöker. Herkes bayılır... bir kişi hariç: <span class="glitch" data-text="Veyron">Veyron</span>.</p>
+                <p>Sis dağılırken <span class="neon neon-blue" data-text="Mia">Mia</span> ve <span class="neon neon-gradient" data-text="Karlin">Karlin</span> kendilerini bir lağım sisteminde zincirlenmiş şekilde bulur. Karşılarında <span class="glitch" data-text="Veyron">Veyron</span>. Gözleri soğuk ve nefretle dolu.</p>
+                <p><strong><span class="neon neon-blue" data-text="Mia">Mia</span>:</strong> "Veyron... neden?"<br>
+                <strong><span class="neon neon-gradient" data-text="Karlin">Karlin</span> (titreyerek):</strong> "Sana ne oldu?"</p>
+                <p><strong><span class="glitch" data-text="Veyron">Veyron</span>:</strong></p>
+                <blockquote><em>"Olduğunuz şeyden iğreniyorum. Gücümü küçümsediniz. Şimdi siz küçüleceksiniz."</em></blockquote>
+                <p><span class="neon neon-blue" data-text="Mia">Mia</span> zincirlerini zorlar, Black Flash denemesi yapar ama <span class="glitch" data-text="Veyron">Veyron</span> bir hareketle <span class="neon neon-blue" data-text="Mia">Mia</span>’yı duvara fırlatır. Kanla beraber bağırış yankılanır.</p>
+                <p><span class="neon neon-gradient" data-text="Karlin">Karlin</span>, korkusuna rağmen Black Flash’i ateşler ve kaçar, soluğu <span class="glitch-red-black" data-text="Skinner">Skinner</span>’ın yanında alır.</p>
+                <blockquote><em>"Hocam... o artık bizimle değil. <span class="glitch" data-text="Veyron">Veyron</span>... tamamen gitmiş."</em></blockquote>
+            </div>
+
+            <div class="section">
+                <h3>🗡 4. GÜN — “Kırılma Noktası”</h3>
+                <p><span class="glitch-red-black" data-text="Skinner">Skinner</span> ve <span class="neon neon-gradient" data-text="Karlin">Karlin</span>, lağımın girişine vardıklarında <span class="neon neon-blue" data-text="Mia">Mia</span>’nın kanlar içinde kaçtığını görürler. <span class="neon neon-gradient" data-text="Karlin">Karlin</span> neredeyse bayılmak üzeredir.</p>
+                <p><span class="glitch-red-black" data-text="Skinner">Skinner</span>, gözlüklerini çıkarır. İlk defa gerçekten öfkelidir.</p>
+                <blockquote><em>“Artık öğretmen değilim... artık bir askerim.”</em></blockquote>
+                <p>Lağıma atladığı anda yer sarsılır. <span class="glitch" data-text="Veyron">Veyron</span> onu beklemektedir.</p>
+                <p>İki eski dost. Bir öğretmen ve bir öğrenci. Bir son başlıyor.</p>
+            </div>
+
+            <div class="section">
+                <h3>🔥 5. GÜN – “Kül ve Kılıç”</h3>
+                <p><strong>Devamı için bazı fikirler:</strong> <span class="glitch-red-black" data-text="Skinner">Skinner</span> ve <span class="glitch" data-text="Veyron">Veyron</span>’un destansı savaşı başlar. Bu sırada <span class="neon neon-blue" data-text="Mia">Mia</span> ve <span class="neon neon-gradient" data-text="Karlin">Karlin</span> güçlenmeye çalışır. <span class="glitch" data-text="Veyron">Veyron</span>’un karanlığı daha da büyürken, <span class="neon neon-blue" data-text="Mia">Mia</span> onun içindeki eski dostu kurtarmaya çalışır.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const glitchElements = document.querySelectorAll('.glitch, .glitch-red-black');
+
+          glitchElements.forEach(element => {
+            const text = element.getAttribute('data-text');
+            if (!text) return;
+
+            // Orijinal metni koru (ekran okuyucular ve JS kapalıyken)
+            element.textContent = text; 
+            
+            // Efekt için 10 adet katman oluştur
+            for (let i = 0; i < 10; i++) {
+              const span = document.createElement('span');
+              span.textContent = text;
+              span.setAttribute('aria-hidden', 'true');
+              element.appendChild(span);
+            }
+          });
+        });
+    </script>
+</body>
+</html>
