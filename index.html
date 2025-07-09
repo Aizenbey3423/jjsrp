@@ -99,7 +99,6 @@
             box-shadow: 0 0 15px rgba(255, 77, 77, 0.3);
         }
         
-        /* BAŞLIK İÇİN YENİ ANİMASYON (FLICKER) */
         @keyframes flicker-glow {
             0%, 18%, 22%, 25%, 53%, 57%, 100% {
                 color: #ff4d4d;
@@ -111,7 +110,7 @@
                     0 0 70px rgba(255, 44, 44, 0.8);
             }
             20%, 24%, 55% {
-                color: #5e2a2a; /* Soluk renk */
+                color: #5e2a2a;
                 text-shadow: none;
             }
         }
@@ -190,6 +189,10 @@
         .neon-gradient:hover { text-shadow: 0 0 10px #00b7eb, 0 0 20px #ff4d4d; }
         .neon-red { color: #ff4d4d; }
         .neon-red:hover { text-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff4d4d; }
+        
+        /* KAEL İÇİN YENİ NEON STİLİ (KIP KIRMIZI) */
+        .neon-crimson { color: #DC143C; }
+        .neon-crimson:hover { text-shadow: 0 0 10px #DC143C, 0 0 20px #DC143C; }
 
         @media (max-width: 600px) {
             .container { padding: 15px; }
@@ -207,28 +210,28 @@
             <h2>Karakterler</h2>
             <ul>
                 <li>
-                    <strong><span class="neon neon-blue" data-text="Mia (Sude)">Mia (Sude)</span></strong><br>
-                    <strong>Kişilik:</strong> Arkadaş canlısı, yardımsever, cesur.<br>
-                    <strong>Lanet Enerjisi:</strong> Orta.<br>
-                    <strong>Özellikler:</strong> Grup içinde en sosyal olan kişi, çatışmaları yatıştırma rolünde. Savaşmaktansa çözüm bulmaya çalışır. Grup düştüğünde onları motive eden kişi.
-                </li>
-                <li>
-                    <strong><span class="neon neon-red" data-text="Profesör Elias Skinner (Kerem)">Profesör Elias Skinner (Kerem)</span></strong><br>
-                    <strong>Kişilik:</strong> Dâhi, stratejist, ultra güçlü. Evrenin sırlarını çözmüş, eskiden özel kuvvetlerde görev yapmış biri.<br>
+                    <strong><span class="neon neon-red" data-text="Profesör Skinner (Kerem)">Profesör Skinner (Kerem)</span></strong><br>
+                    <strong>Kişilik:</strong> Zeki, yardım sever, ultra mega güçlü, patentli eski asker. Manipülasyon yeteneği yüksek. Her ana özel plan yapabilir. Jimnastik ve kodlama bilgisi var. Evreni çözdü.<br>
                     <strong>Lanet Enerjisi:</strong> Ultra Mega Süper Yüksek.<br>
-                    <strong>Özellikler:</strong> Black Flash ustası. Bilgisini öğrencilerine aktarmayı görev edinmiş. Sessizliği sezgileriyle bozar.
+                    <strong>Özellikler:</strong> Black Flash tekniğinin ustası. Öğrencilerine sadece bilgi değil, içsel gücü de öğretmeye çalışır. Tehlike anında öğretmen değil savaşçı olur.
                 </li>
                 <li>
                     <strong><span class="neon neon-gradient" data-text="Karlin (Sudenaz)">Karlin (Sudenaz)</span></strong><br>
-                    <strong>Kişilik:</strong> Dürüst, hayvansever, sessiz ama duygusal. İçinde büyük bir güç saklı.<br>
+                    <strong>Kişilik:</strong> Dürüst, Kitkat ve somon sever, kendisi somon, hayvansever, iyilik meleği, sessiz.<br>
                     <strong>Lanet Enerjisi:</strong> Orta.<br>
-                    <strong>Özellikler:</strong> Sessizliğiyle mistik bir hava katar. Bazen bir somon gibi davranmasıyla grupta eğlenceli anlar yaratır.
+                    <strong>Özellikler:</strong> Sessizliğiyle sezgileri kuvvetlidir. Grup içi uyumu sağlar. İçindeki iyi enerjiyi şifaya çevirebilir.
                 </li>
                 <li>
-                    <strong><span class="glitch" data-text="Eren (Yeni isim: Veyron)">Eren (Yeni isim: Veyron)</span></strong><br>
-                    <strong>Kişilik:</strong> Karanlığa düşmüş bir anti-kahraman. Kişilik bozukluğu olan, içe dönük ve aşırı güçlü. Güç için her şeyi yapar.<br>
+                    <strong><span class="neon neon-crimson" data-text="Kael (Arda)">Kael (Arda)</span></strong><br>
+                    <strong>Kişilik:</strong> Güçlü, vazgeçmez, kararlı, yardım sever, dürüst ve sakin.<br>
+                    <strong>Lanet Enerjisi:</strong> Yüksek.<br>
+                    <strong>Özellikler:</strong> Lider ruhlu. Yıkılınca hemen ayağa kalkar. Sadakatlidir. Black Flash potansiyeli yüksektir.
+                </li>
+                <li>
+                    <strong><span class="glitch" data-text="Veyron">Veyron</span></strong><br>
+                    <strong>Kişilik:</strong> Kişilik bozukluğu olan biri. Kötü biri, içine kapanık, sessiz. Yardım sever ama sadece canı isterse. Güç için her şeyi yapar.<br>
                     <strong>Lanet Enerjisi:</strong> Fazla Çok Yüksek.<br>
-                    <strong>Özellikler:</strong> Garou havasında bir karakter. Dramın, kaosun ve çatışmanın başrolü. İçindeki <em>"iyilik"</em> artık sadece küllerden ibaret.
+                    <strong>Özellikler:</strong> İçinde karanlık bir varlık gibi büyüyen bir hırs vardır. Garou benzeri anti-kahraman. Eskiden grup içindeydi ama artık hepsine karşıdır.
                 </li>
             </ul>
         </div>
@@ -237,47 +240,46 @@
             <h2>🎭 Hikaye</h2>
 
             <div class="section">
-                <h3>🩸 1. GÜN — “Düşüşün Başlangıcı”</h3>
-                <p><strong>Veyron</strong> sabah okulun kapısından içeri girdiğinde gözleri artık canlı bakmaz olmuştu. <span class="neon neon-red" data-text="Skinner">Skinner</span> hoca onunla tekrar konuşmaya çalışsa da <strong>Veyron</strong>’un aklı orada değildi. Gözleri her köşeye takılıyor, herkesi düşman gibi görüyordu. <span class="neon neon-blue" data-text="Mia">Mia</span> ona yaklaşmak istedi ama <strong>Veyron</strong> uzaklaştı. <span class="neon neon-blue" data-text="Mia">Mia</span>, “Ne oluyor sana?” diye sorduğunda tek cevap geldi:</p>
-                <blockquote><em>Siz benim ne yaşadığımı bilmiyorsunuz.</em></blockquote>
-                <p>O gece <strong>Veyron</strong> odasında yalnız kaldı. İçindeki karanlık artık bir düşünce değil, bir varlığa dönüşmüştü. Yumruğunu duvara öyle bir vurdu ki tüm oda sarsıldı. Kan akarken uyuyakaldı.</p>
+                <h3>🩸 1. GÜN — Düşüşün Başlangıcı</h3>
+                <p><strong>Veyron</strong> her zaman ki okuluna gider. Fakat bu sabah farklıdır. Gözleri karanlığa biraz daha yakın bakar. <span class="neon neon-red" data-text="Skinner">Skinner</span> hocası onunla yine konuşmaya çalışır.</p>
+                <blockquote><strong><span class="neon neon-red" data-text="Skinner">Skinner</span>:</strong> <em>"Veyron, bu gidiş nereye oğlum? Seni kaybetmek istemiyoruz."</em></blockquote>
+                <p>Ama <strong>Veyron</strong> onu dinlemez. <span class="neon neon-gradient" data-text="Karlin">Karlin</span> ona gülümsemeye çalışsa da artık bunlar <strong>Veyron</strong>’un içinde bir şey ifade etmemektedir.</p>
+                <p>Tenefüste <span class="neon neon-crimson" data-text="Kael (Arda)">Kael (Arda)</span> yaklaşır.</p>
+                <blockquote><strong><span class="neon neon-crimson" data-text="Kael (Arda)">Kael (Arda)</span>:</strong> <em>"Kardeşim ne oluyor sana?"</em><br>
+                <strong>Veyron:</strong> <em>"Siz benim ne yaşadığımı bilmiyorsunuz."</em></blockquote>
+                <p>Eve geldiğinde artık aklındaki kötü düşünceleri susturamaz. Yumruğunu duvara öyle bir vurur ki duvar çatlar. Sonra sessizce yatağa yığılır ve uyur. Ama karanlık onunla birlikte uyumamaktadır.</p>
             </div>
 
             <div class="section">
-                <h3>⚠️ 2. GÜN — “Sisler İçinde Bir Tehdit”</h3>
-                <p><strong>Veyron</strong> okula gitmedi. Planını son aşamaya getirmişti. Bu sırada <span class="neon neon-red" data-text="Skinner">Skinner</span> hoca, <span class="neon neon-blue" data-text="Mia">Mia</span> ve <span class="neon neon-gradient" data-text="Karlin">Karlin</span>’e “Black Flash” öğretiyordu.</p>
-                <blockquote>🌀 <strong>Skinner için anlatım önerisi (Skinner konuşması):</strong><br>
-                <em>"Black Flash, kalbinizin attığı son anda yapılan bir saldırıdır. Bir ölüm vuruşu değil, zamana karşı bir isyan. Odaklan. Hisset. Sonra bırak kendini."</em></blockquote>
-                <p><span class="neon neon-blue" data-text="Mia">Mia</span> bir türlü dengesini bulamaz. <span class="neon neon-gradient" data-text="Karlin">Karlin</span> ise enerjiyi çağırsa da ateşleyemez.</p>
-                <p>Ders sonunda herkes evlerine dağılırken, <strong>Veyron</strong> karanlık planını tamamlamıştır. Düşüncelerinde sadece tek bir cümle vardır:</p>
-                <blockquote><em>"Kurtaramadığınız karanlıkla sizi boğacağım."</em></blockquote>
+                <h3>⚠️ 2. GÜN — Sisler İçinde Bir Tehdit</h3>
+                <p><strong>Veyron</strong> okula gitmez. Evinde, masa başında planını çizmektedir. Gözlerinde kararlılık ve nefret vardır.</p>
+                <p>Okulda ise <span class="neon neon-red" data-text="Skinner">Skinner</span> hocası "Black Flash" eğitimine başlar.</p>
+                <blockquote><strong><span class="neon neon-red" data-text="Skinner">Skinner</span>:</strong> <em>"Black Flash... zamanın kalbine atılan bir yumruktur. Tam doğru anda, hissederek yapılmalı. Hissedin... sonra bırakın."</em></blockquote>
+                <p><span class="neon neon-crimson" data-text="Kael (Arda)">Kael (Arda)</span> ilk başta zorlanır ama birkaç denemeden sonra başarıya ulaşır. <span class="neon neon-gradient" data-text="Karlin">Karlin</span> ise henüz bu seviyeye ulaşamaz. <span class="neon neon-red" data-text="Skinner">Skinner</span> onların üzerine titrer, her biri için farklı yöntemler dener.</p>
+                <p>Gün biter, öğrenciler evlerine dağılır. <strong>Veyron</strong>’un planı ise artık hazırdır.</p>
             </div>
 
             <div class="section">
-                <h3>🌫 3. GÜN — “Sis Çökünce”</h3>
-                <p>Ders işlenirken <span class="glitch-red-black" data-text="Skinner">Skinner</span> kısa bir süre dışarı çıkar. O an sınıfa yoğun bir sis çöker. Herkes bayılır... bir kişi hariç: <span class="glitch" data-text="Veyron">Veyron</span>.</p>
-                <p>Sis dağılırken <span class="neon neon-blue" data-text="Mia">Mia</span> ve <span class="neon neon-gradient" data-text="Karlin">Karlin</span> kendilerini bir lağım sisteminde zincirlenmiş şekilde bulur. Karşılarında <span class="glitch" data-text="Veyron">Veyron</span>. Gözleri soğuk ve nefretle dolu.</p>
-                <p><strong><span class="neon neon-blue" data-text="Mia">Mia</span>:</strong> "Veyron... neden?"<br>
-                <strong><span class="neon neon-gradient" data-text="Karlin">Karlin</span> (titreyerek):</strong> "Sana ne oldu?"</p>
-                <p><strong><span class="glitch" data-text="Veyron">Veyron</span>:</strong></p>
-                <blockquote><em>"Olduğunuz şeyden iğreniyorum. Gücümü küçümsediniz. Şimdi siz küçüleceksiniz."</em></blockquote>
-                <p><span class="neon neon-blue" data-text="Mia">Mia</span> zincirlerini zorlar, Black Flash denemesi yapar ama <span class="glitch" data-text="Veyron">Veyron</span> bir hareketle <span class="neon neon-blue" data-text="Mia">Mia</span>’yı duvara fırlatır. Kanla beraber bağırış yankılanır.</p>
-                <p><span class="neon neon-gradient" data-text="Karlin">Karlin</span>, korkusuna rağmen Black Flash’i ateşler ve kaçar, soluğu <span class="glitch-red-black" data-text="Skinner">Skinner</span>’ın yanında alır.</p>
-                <blockquote><em>"Hocam... o artık bizimle değil. <span class="glitch" data-text="Veyron">Veyron</span>... tamamen gitmiş."</em></blockquote>
+                <h3>🌫 3. GÜN — Sis Çökünce</h3>
+                <p>Ders devam ederken <span class="glitch-red-black" data-text="Skinner">Skinner</span> hoca dışarı çıkar. O an sınıfa yoğun bir sis çöker. Herkes bayılır, sadece <span class="glitch" data-text="Veyron">Veyron</span> ayaktadır. Planı başlamıştır.</p>
+                <p>Öğrenciler kendilerini gözlerini açtıklarında lağım gibi bir yerde zincirlenmiş halde bulur. <span class="glitch" data-text="Veyron">Veyron</span> onları izlemektedir. Gözlerinde artık tanıdık hiçbir şey yoktur.</p>
+                <blockquote><strong><span class="neon neon-gradient" data-text="Karlin">Karlin</span>:</strong> <em>"Bunu yapamazsın..."</em><br>
+                <strong><span class="glitch" data-text="Veyron">Veyron</span>:</strong> <em>"Siz küçümsediniz beni... şimdi küçüleceksiniz."</em></blockquote>
+                <p><span class="neon neon-crimson" data-text="Kael (Arda)">Kael (Arda)</span> zincirlerini koparıp saldırır ama <span class="glitch" data-text="Veyron">Veyron</span> tek hamlede <span class="neon neon-crimson" data-text="Kael (Arda)">Kael (Arda)</span>’nın kolunu koparır. <span class="neon neon-crimson" data-text="Kael (Arda)">Kael (Arda)</span> acı içinde bağırırken son bir hamleyle "Black Flash" patlatır ve kaçar. Okula döner ve olanları <span class="glitch-red-black" data-text="Skinner">Skinner</span>’a anlatır.</p>
+                <blockquote><strong><span class="neon neon-crimson" data-text="Kael (Arda)">Kael (Arda)</span>:</strong> <em>"Hocam... o artık bizimle değil."</em></blockquote>
             </div>
 
             <div class="section">
-                <h3>🗡 4. GÜN — “Kırılma Noktası”</h3>
-                <p><span class="glitch-red-black" data-text="Skinner">Skinner</span> ve <span class="neon neon-gradient" data-text="Karlin">Karlin</span>, lağımın girişine vardıklarında <span class="neon neon-blue" data-text="Mia">Mia</span>’nın kanlar içinde kaçtığını görürler. <span class="neon neon-gradient" data-text="Karlin">Karlin</span> neredeyse bayılmak üzeredir.</p>
-                <p><span class="glitch-red-black" data-text="Skinner">Skinner</span>, gözlüklerini çıkarır. İlk defa gerçekten öfkelidir.</p>
-                <blockquote><em>“Artık öğretmen değilim... artık bir askerim.”</em></blockquote>
-                <p>Lağıma atladığı anda yer sarsılır. <span class="glitch" data-text="Veyron">Veyron</span> onu beklemektedir.</p>
-                <p>İki eski dost. Bir öğretmen ve bir öğrenci. Bir son başlıyor.</p>
+                <h3>🗡 4. GÜN — Kırılma Noktası</h3>
+                <p><span class="glitch-red-black" data-text="Skinner">Skinner</span> ve <span class="neon neon-crimson" data-text="Kael (Arda)">Kael (Arda)</span>, lağımın girişine giderler. <span class="neon neon-gradient" data-text="Karlin">Karlin</span>'i kanlar içinde ama hayatta bulurlar. <span class="neon neon-gradient" data-text="Karlin">Karlin</span> büyük hasar almıştır.</p>
+                <p><span class="glitch-red-black" data-text="Skinner">Skinner</span> gözlüğünü çıkarır. Yüzü öfkeyle doludur.</p>
+                <blockquote><strong><span class="glitch-red-black" data-text="Skinner">Skinner</span>:</strong> <em>"Artık öğretmen değilim... artık bir savaşcıyım."</em></blockquote>
+                <p>Lağıma atlar. Yer sarsılır. <span class="glitch" data-text="Veyron">Veyron</span> onu beklemektedir.</p>
+                <p>İki eski dost, şimdi kaderin karşı karşıya getirdiği iki savaşçıya dönüşür. Büyük savaş başlamak üzeredir...</p>
             </div>
-
+            
             <div class="section">
-                <h3>🔥 5. GÜN – “Kül ve Kılıç”</h3>
-                <p><strong>Devamı için bazı fikirler:</strong> <span class="glitch-red-black" data-text="Skinner">Skinner</span> ve <span class="glitch" data-text="Veyron">Veyron</span>’un destansı savaşı başlar. Bu sırada <span class="neon neon-blue" data-text="Mia">Mia</span> ve <span class="neon neon-gradient" data-text="Karlin">Karlin</span> güçlenmeye çalışır. <span class="glitch" data-text="Veyron">Veyron</span>’un karanlığı daha da büyürken, <span class="neon neon-blue" data-text="Mia">Mia</span> onun içindeki eski dostu kurtarmaya çalışır.</p>
+                <h2>Devam Edecek...</h2>
             </div>
         </div>
     </div>
@@ -290,10 +292,8 @@
             const text = element.getAttribute('data-text');
             if (!text) return;
 
-            // Orijinal metni koru (ekran okuyucular ve JS kapalıyken)
             element.textContent = text; 
             
-            // Efekt için 10 adet katman oluştur
             for (let i = 0; i < 10; i++) {
               const span = document.createElement('span');
               span.textContent = text;
